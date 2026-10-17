@@ -1,0 +1,136 @@
+/* Aurelia Amazon Store - Amazon-Style Design System */
+
+:root {
+  --amz-dark: #131921;
+  --amz-subnav: #232f3e;
+  --amz-bg: #EAEDED;
+  --amz-yellow: #FFD814;
+  --amz-yellow-hover: #F7CA00;
+  --amz-orange: #FFA41C;
+  --amz-orange-hover: #FA8900;
+  --amz-blue-link: #007185;
+  --amz-blue-hover: #C7511F;
+  --amz-red-deal: #CC0C39;
+  --amz-green-stock: #007600;
+  --font-amazon: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+}
+
+body {
+  background-color: var(--amz-bg);
+  color: #0F1111;
+  font-family: var(--font-amazon);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Amazon Nav Bars */
+.amz-nav-main {
+  background-color: var(--amz-dark);
+}
+.amz-nav-sub {
+  background-color: var(--amz-subnav);
+}
+
+/* Amazon Action Buttons */
+.btn-amz-cart {
+  background-color: var(--amz-yellow);
+  border: 1px solid #FCD200;
+  color: #0F1111;
+  box-shadow: 0 2px 5px rgba(213,217,217,.5);
+}
+.btn-amz-cart:hover {
+  background-color: var(--amz-yellow-hover);
+  border-color: #F2C200;
+}
+
+.btn-amz-buy {
+  background-color: var(--amz-orange);
+  border: 1px solid #FF8F00;
+  color: #0F1111;
+  box-shadow: 0 2px 5px rgba(213,217,217,.5);
+}
+.btn-amz-buy:hover {
+  background-color: var(--amz-orange-hover);
+  border-color: #E07A00;
+}
+
+/* Amazon Deal & Seller Badges */
+.badge-bestseller {
+  background: #E67A00;
+  color: #FFFFFF;
+  clip-path: polygon(0 0, 100% 0, 94% 50%, 100% 100%, 0 100%);
+  padding: 3px 12px 3px 8px;
+}
+
+.badge-limited-deal {
+  background-color: var(--amz-red-deal);
+  color: #FFFFFF;
+}
+
+.badge-choice {
+  background-color: #232F3E;
+  color: #FFFFFF;
+}
+.badge-choice span {
+  color: #F08804;
+}
+
+/* Star Ratings & Review Bars */
+.star-filled {
+  color: #FFA41C;
+}
+.review-bar-fill {
+  background-color: #FFA41C;
+}
+
+/* Amazon Links */
+a.amz-link, .amz-link {
+  color: var(--amz-blue-link);
+}
+a.amz-link:hover, .amz-link:hover {
+  color: var(--amz-blue-hover);
+  text-decoration: underline;
+}
+
+/* Quad-Tile Amazon Box */
+.quad-card {
+  background: #FFFFFF;
+  border: 1px solid #E3E6E6;
+  border-radius: 4px;
+}
+
+/* Amazon Buy Box */
+.amz-buybox {
+  background: #FFFFFF;
+  border: 1px solid #D5D9D9;
+  border-radius: 8px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #EAEDED;
+}
+::-webkit-scrollbar-thumb {
+  background: #A6A9AA;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #76797A;
+}
+
+/* Modals & Drawers */
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+/* Image Zoom & Transitions */
+.pdp-main-img {
+  transition: transform 0.3s ease;
+}
+.pdp-main-img:hover {
+  transform: scale(1.08);
+}

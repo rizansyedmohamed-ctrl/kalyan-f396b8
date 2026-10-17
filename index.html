@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurelia Jewels | Amazon-Style Anti-Tarnish Jewellery Store (Sole Maker)</title>
+  <meta name="description" content="Shop 18K gold plated anti-tarnish fashion jewellery online. Hoop earrings from ?250, jhumkas, necklaces, rings, and bracelets. Sold exclusively by Aurelia Jewels with Free Express Delivery across India.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            amzDark: '#131921',
+            amzSubnav: '#232f3e',
+            amzBg: '#EAEDED',
+            amzYellow: '#FFD814',
+            amzYellowHover: '#F7CA00',
+            amzOrange: '#FFA41C',
+            amzOrangeHover: '#FA8900',
+            amzBlue: '#007185',
+            amzRed: '#CC0C39',
+            amzGreen: '#007600'
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Amazon Theme Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-[#EAEDED] text-[#0F1111] antialiased pb-16 md:pb-0">
+
+  <!-- 1. AMAZON TOP NAVIGATION BAR -->
+  <header class="sticky top-0 z-40 shadow-md">
+    <!-- Main Black/Navy Bar -->
+    <div class="amz-nav-main text-white px-2 sm:px-4 py-2.5 flex items-center justify-between gap-2 sm:gap-4">
+      
+      <!-- Logo & Sole Seller Badge -->
+      <a href="#" class="flex items-center gap-1.5 p-1 rounded hover:outline hover:outline-1 hover:outline-white transition flex-shrink-0">
+        <div class="flex flex-col">
+          <div class="flex items-baseline">
+            <span class="font-serif text-xl sm:text-2xl font-black tracking-wider text-white brand-name-text">AURELIA</span>
+            <span class="text-amzOrange font-bold text-xs ml-0.5">.in</span>
+          </div>
+          <span class="text-[9px] text-amber-300 font-semibold tracking-wider uppercase -mt-1">
+            Sole Brand Store
+          </span>
+        </div>
+      </a>
+
+      <!-- Deliver To Location Widget -->
+      <button type="button" id="nav-location-btn" class="hidden md:flex items-center gap-1.5 p-1.5 rounded hover:outline hover:outline-1 hover:outline-white text-left transition flex-shrink-0">
+        <i data-lucide="map-pin" class="w-4 h-4 text-white"></i>
+        <div class="text-[11px] leading-tight">
+          <span class="text-stone-300 block text-[10px]">Deliver to</span>
+          <span class="font-bold text-white block current-city-pincode">Mumbai 400001</span>
+        </div>
+      </button>
+
+      <!-- Amazon Universal Search Bar with Department Selector -->
+      <div class="flex-grow max-w-3xl mx-1 sm:mx-2">
+        <form id="amz-search-form" class="flex rounded-md overflow-hidden shadow-inner focus-within:ring-2 focus-within:ring-amzOrange">
+          <!-- Department Dropdown -->
+          <select id="search-category-select" class="bg-stone-200 hover:bg-stone-300 text-stone-800 text-xs px-2 py-2 border-r border-stone-300 focus:outline-none cursor-pointer max-w-[125px] sm:max-w-[150px] truncate">
+            <option value="All Categories">All Categories</option>
+            <option value="Hoop earrings">Hoop earrings (?250)</option>
+            <option value="Stud earrings">Stud earrings</option>
+            <option value="Jhumkas">Jhumkas</option>
+            <option value="Necklaces">Necklaces</option>
+            <option value="Rings">Rings</option>
+            <option value="Bracelets">Bracelets</option>
+            <option value="Jewellery sets">Jewellery sets</option>
+          </select>
+
+          <!-- Input -->
+          <input 
+            type="text" 
+            id="amz-search-input" 
+            placeholder="Search Aurelia Jewels anti-tarnish collection..." 
+            class="flex-grow px-3 py-2 text-xs sm:text-sm text-stone-900 bg-white focus:outline-none"
+          />
+
+          <!-- Orange Search Button -->
+          <button type="submit" class="bg-amzOrange hover:bg-amzOrangeHover text-stone-950 px-4 py-2 flex items-center justify-center transition">
+            <i data-lucide="search" class="w-5 h-5"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Right Header Actions -->
+      <div class="flex items-center gap-1 sm:gap-3 text-xs flex-shrink-0">
+        <!-- India Flag -->
+        <div class="hidden lg:flex items-center gap-1 p-1.5 rounded hover:outline hover:outline-1 hover:outline-white cursor-pointer font-bold">
+          <span>????</span>
+          <span>EN</span>
+        </div>
+
+        <!-- Orders & Account -->
+        <button type="button" class="open-cart-btn p-1.5 rounded hover:outline hover:outline-1 hover:outline-white text-left hidden sm:block">
+          <span class="text-stone-300 block text-[10px]">Returns</span>
+          <span class="font-bold text-white block">& Orders</span>
+        </button>
+
+        <!-- Amazon Cart Button -->
+        <button type="button" class="open-cart-btn flex items-center gap-1 p-1.5 rounded hover:outline hover:outline-1 hover:outline-white transition relative">
+          <div class="relative">
+            <i data-lucide="shopping-cart" class="w-7 h-7 text-white"></i>
+            <span class="cart-count-badge absolute -top-1 -right-1 bg-amzOrange text-stone-950 text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-amzDark">
+              0
+            </span>
+          </div>
+          <span class="font-bold text-white hidden sm:inline-block mt-2">Cart</span>
+        </button>
+
+        <!-- Seller Central (Exclusive Single-Seller Portal Button) -->
+        <button type="button" class="open-seller-btn flex items-center gap-1 px-2.5 py-1.5 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-[11px] font-bold transition shadow-sm" title="Owner Only - Single Seller Portal">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-amber-400"></i>
+          <span class="hidden md:inline">Seller Central</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Secondary Sub-Nav Bar -->
+    <div class="amz-nav-sub text-white px-3 sm:px-4 py-1.5 text-xs flex items-center justify-between overflow-x-auto whitespace-nowrap gap-4">
+      <div class="flex items-center gap-4">
+        <!-- All Menu Drawer Trigger -->
+        <button type="button" id="open-mega-menu-btn" class="flex items-center gap-1 font-bold p-1 rounded hover:outline hover:outline-1 hover:outline-white">
+          <i data-lucide="menu" class="w-4 h-4"></i>
+          <span>All</span>
+        </button>
+
+        <a href="#catalogue-section" class="category-quick-nav p-1 rounded hover:outline hover:outline-1 hover:outline-white" data-cat="All Categories">Today's Deals</a>
+        <a href="#catalogue-section" class="category-quick-nav p-1 rounded hover:outline hover:outline-1 hover:outline-white" data-cat="Hoop earrings">Hoop Earrings (?250)</a>
+        <a href="#catalogue-section" class="category-quick-nav p-1 rounded hover:outline hover:outline-1 hover:outline-white" data-cat="Jhumkas">Jhumkas</a>
+        <a href="#catalogue-section" class="category-quick-nav p-1 rounded hover:outline hover:outline-1 hover:outline-white" data-cat="Necklaces">Necklaces</a>
+        <a href="#catalogue-section" class="category-quick-nav p-1 rounded hover:outline hover:outline-1 hover:outline-white" data-cat="Rings">Rings</a>
+        <a href="#catalogue-section" class="category-quick-nav p-1 rounded hover:outline hover:outline-1 hover:outline-white" data-cat="Bracelets">Bracelets</a>
+        <a href="#catalogue-section" class="category-quick-nav p-1 rounded hover:outline hover:outline-1 hover:outline-white" data-cat="Jewellery sets">Jewellery Sets</a>
+      </div>
+
+      <div class="hidden lg:flex items-center gap-3 text-amber-300 text-[11px] font-semibold">
+        <span class="flex items-center gap-1">
+          <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
+          Direct From Maker (Sole Seller)
+        </span>
+        <span>?</span>
+        <span>FREE Express Delivery Over ?499</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. AMAZON HERO CAROUSEL -->
+  <section class="relative bg-stone-900 overflow-hidden">
+    <!-- Carousel Slides Container -->
+    <div id="hero-carousel" class="relative h-[240px] sm:h-[340px] md:h-[420px] w-full">
+      
+      <!-- Slide 1: Festival Deal Banner -->
+      <div class="carousel-slide absolute inset-0 opacity-100 transition-opacity duration-700">
+        <img 
+          src="https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=1600&auto=format&fit=crop" 
+          alt="18K Gold Plated Hoops" 
+          class="w-full h-full object-cover object-center brightness-75"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-stone-950/90 via-stone-950/50 to-transparent flex items-center">
+          <div class="max-w-7xl mx-auto px-6 sm:px-12 w-full text-white space-y-2 sm:space-y-4">
+            <span class="inline-block px-3 py-1 bg-amzRed text-white text-xs font-bold uppercase tracking-wider rounded">
+              Great Indian Jewellery Festival
+            </span>
+            <h1 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white max-w-xl leading-tight">
+              18K Anti-Tarnish Hoops <br><span class="text-amber-400">Starting at ?250</span>
+            </h1>
+            <p class="text-xs sm:text-sm text-stone-200 max-w-md hidden sm:block">
+              100% Waterproof & Sweatproof 316L Stainless Steel. Sold exclusively by Aurelia Jewels.
+            </p>
+            <div class="pt-2">
+              <a href="#catalogue-section" class="inline-flex items-center gap-2 px-6 py-2.5 bg-amzYellow hover:bg-amzYellowHover text-stone-950 font-bold text-xs uppercase tracking-wider rounded shadow-md transition">
+                <span>Shop Today's Deals</span>
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2: Waterproof Chains Banner -->
+      <div class="carousel-slide absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-700">
+        <img 
+          src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1600&auto=format&fit=crop" 
+          alt="Herringbone Necklace" 
+          class="w-full h-full object-cover object-center brightness-75"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-stone-950/90 via-stone-950/50 to-transparent flex items-center">
+          <div class="max-w-7xl mx-auto px-6 sm:px-12 w-full text-white space-y-2 sm:space-y-4">
+            <span class="inline-block px-3 py-1 bg-amber-600 text-white text-xs font-bold uppercase tracking-wider rounded">
+              Top Trending Chains
+            </span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white max-w-xl leading-tight">
+              Herringbone & Snake Chains <br><span class="text-amber-300">Under ?499</span>
+            </h2>
+            <p class="text-xs sm:text-sm text-stone-200 max-w-md hidden sm:block">
+              Liquid gold drape that never tarnishes. 1-Year Anti-Tarnish Guarantee.
+            </p>
+            <div class="pt-2">
+              <a href="#catalogue-section" class="inline-flex items-center gap-2 px-6 py-2.5 bg-amzYellow hover:bg-amzYellowHover text-stone-950 font-bold text-xs uppercase tracking-wider rounded shadow-md transition">
+                <span>Explore Chains</span>
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Navigation Arrows -->
+      <button type="button" id="carousel-prev-btn" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-14 bg-black/40 hover:bg-black/70 text-white rounded flex items-center justify-center transition">
+        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+      </button>
+      <button type="button" id="carousel-next-btn" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-14 bg-black/40 hover:bg-black/70 text-white rounded flex items-center justify-center transition">
+        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Amazon Gradient Fade to Background -->
+    <div class="h-16 bg-gradient-to-b from-transparent to-[#EAEDED] absolute -bottom-1 inset-x-0 pointer-events-none"></div>
+  </section>
+
+  <!-- 3. AMAZON QUAD-TILE PROMO CARDS (Overlapping Hero Banner) -->
+  <section class="max-w-7xl mx-auto px-3 sm:px-6 relative -mt-20 sm:-mt-28 z-20 mb-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      
+      <!-- Quad Card 1: Deals Under ?299 -->
+      <div class="quad-card p-4 flex flex-col justify-between shadow-sm">
+        <div>
+          <h3 class="font-bold text-base sm:text-lg text-[#0F1111] mb-2.5">
+            Everyday Steals | Under ?299
+          </h3>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <div class="cursor-pointer group category-quick-nav" data-cat="Hoop earrings">
+              <div class="aspect-square bg-stone-100 rounded overflow-hidden mb-1">
+                <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Hoops" />
+              </div>
+              <span class="text-[11px] text-stone-700 block truncate">Hoops from ?250</span>
+            </div>
+            <div class="cursor-pointer group category-quick-nav" data-cat="Rings">
+              <div class="aspect-square bg-stone-100 rounded overflow-hidden mb-1">
+                <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Rings" />
+              </div>
+              <span class="text-[11px] text-stone-700 block truncate">Rings from ?299</span>
+            </div>
+            <div class="cursor-pointer group category-quick-nav" data-cat="Stud earrings">
+              <div class="aspect-square bg-stone-100 rounded overflow-hidden mb-1">
+                <img src="https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Studs" />
+              </div>
+              <span class="text-[11px] text-stone-700 block truncate">Crystal Studs</span>
+            </div>
+            <div class="cursor-pointer group category-quick-nav" data-cat="Hoop earrings">
+              <div class="aspect-square bg-stone-100 rounded overflow-hidden mb-1">
+                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Huggies" />
+              </div>
+              <span class="text-[11px] text-stone-700 block truncate">Mini Huggies</span>
+            </div>
+          </div>
+        </div>
+        <a href="#catalogue-section" class="amz-link text-xs font-semibold mt-4 block">See all deals under ?299</a>
+      </div>
+
+      <!-- Quad Card 2: Shop by Category -->
+      <div class="quad-card p-4 flex flex-col justify-between shadow-sm">
+        <div>
+          <h3 class="font-bold text-base sm:text-lg text-[#0F1111] mb-2.5">
+            Shop by Category
+          </h3>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <div class="cursor-pointer group category-quick-nav" data-cat="Hoop earrings">
+              <div class="aspect-square bg-stone-100 rounded overflow-hidden mb-1">
+                <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Hoops" />
+              </div>
+              <span class="text-[11px] text-stone-700 block truncate">Hoop Earrings</span>
+            </div>
+            <div class="cursor-pointer group category-quick-nav" data-cat="Jhumkas">
+              <div class="aspect-square bg-stone-100 rounded overflow-hidden mb-1">
+                <img src="https://images.unsplash.com/photo-1629224316810-9d8805b95e76?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Jhumkas" />
+              </div>
+              <span class="text-[11px] text-stone-700 block truncate">Jhumkas</span>
+            </div>
+            <div class="cursor-pointer group category-quick-nav" data-cat="Necklaces">
+              <div class="aspect-square bg-stone-100 rounded overflow-hidden mb-1">
+                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Necklaces" />
+              </div>
+              <span class="text-[11px] text-stone-700 block truncate">Chains & Pendants</span>
+            </div>
+            <div class="cursor-pointer group category-quick-nav" data-cat="Jewellery sets">
+              <div class="aspect-square bg-stone-100 rounded overflow-hidden mb-1">
+                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Sets" />
+              </div>
+              <span class="text-[11px] text-stone-700 block truncate">Jewellery Sets</span>
+            </div>
+          </div>
+        </div>
+        <a href="#catalogue-section" class="amz-link text-xs font-semibold mt-4 block">Explore all 7 categories</a>
+      </div>
+
+      <!-- Quad Card 3: Up to 50% Off Bestsellers -->
+      <div class="quad-card p-4 flex flex-col justify-between shadow-sm">
+        <div>
+          <h3 class="font-bold text-base sm:text-lg text-[#0F1111] mb-2.5">
+            Up to 50% off | Top Rated
+          </h3>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <div class="cursor-pointer group category-quick-nav" data-cat="Necklaces">
+              <div class="aspect-square bg-stone-100 rounded overflow-hidden mb-1">
+                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Snake Chain" />
+              </div>
+              <span class="text-[11px] text-stone-700 block truncate">Snake Chain</span>
+            </div>
+            <div class="cursor-pointer group category-quick-nav" data-cat="Bracelets">
+              <div class="aspect-square bg-stone-100 rounded overflow-hidden mb-1">
+                <img src="https://images.unsplash.com/photo-1611591475853-29f7988365df?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Roman Cuff" />
+              </div>
+              <span class="text-[11px] text-stone-700 block truncate">Roman Bangle</span>
+            </div>
+            <div class="cursor-pointer group category-quick-nav" data-cat="Jhumkas">
+              <div class="aspect-square bg-stone-100 rounded overflow-hidden mb-1">
+                <img src="https://images.unsplash.com/photo-1635767798638-3e25273a8236?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Lotus Jhumka" />
+              </div>
+              <span class="text-[11px] text-stone-700 block truncate">Lotus Jhumkas</span>
+            </div>
+            <div class="cursor-pointer group category-quick-nav" data-cat="Jewellery sets">
+              <div class="aspect-square bg-stone-100 rounded overflow-hidden mb-1">
+                <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Glow Duo" />
+              </div>
+              <span class="text-[11px] text-stone-700 block truncate">Everyday Glow Duo</span>
+            </div>
+          </div>
+        </div>
+        <a href="#catalogue-section" class="amz-link text-xs font-semibold mt-4 block">View bestsellers ranking</a>
+      </div>
+
+      <!-- Quad Card 4: Sole Maker Promise -->
+      <div class="quad-card p-4 flex flex-col justify-between shadow-sm bg-gradient-to-b from-white to-amber-50/50">
+        <div>
+          <div class="flex items-center gap-1.5 text-amber-800 text-xs font-bold uppercase tracking-wider mb-1">
+            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
+            <span>Sole Exclusive Seller</span>
+          </div>
+          <h3 class="font-bold text-base sm:text-lg text-[#0F1111] mb-2.5">
+            Direct from Brand Maker
+          </h3>
+          <p class="text-xs text-stone-600 mb-3 leading-relaxed">
+            No middleman markups. Every piece is curated and shipped directly by <strong class="brand-name-text">Aurelia Jewels</strong>.
+          </p>
+          <div class="space-y-2 text-xs text-stone-700">
+            <div class="flex items-center gap-2 p-1.5 bg-white rounded border border-stone-200">
+              <i data-lucide="droplet" class="w-4 h-4 text-blue-600 flex-shrink-0"></i>
+              <span>100% Shower & Water Safe PVD</span>
+            </div>
+            <div class="flex items-center gap-2 p-1.5 bg-white rounded border border-stone-200">
+              <i data-lucide="truck" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
+              <span>Free Delivery on orders ?499+</span>
+            </div>
+            <div class="flex items-center gap-2 p-1.5 bg-white rounded border border-stone-200">
+              <i data-lucide="refresh-cw" class="w-4 h-4 text-amber-700 flex-shrink-0"></i>
+              <span>48h Replacement Guarantee</span>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="open-seller-btn mt-4 text-xs font-bold text-amber-900 bg-amber-100 hover:bg-amber-200 px-3 py-1.5 rounded transition text-center">
+          Manage Store in Seller Central
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. AMAZON DEAL OF THE DAY STRIP -->
+  <section class="max-w-7xl mx-auto px-3 sm:px-6 mb-8">
+    <div class="bg-white p-4 rounded border border-stone-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <span class="px-2.5 py-1 bg-amzRed text-white text-xs font-bold uppercase tracking-wider rounded">
+          Deal of the Day
+        </span>
+        <div>
+          <h4 class="font-bold text-sm sm:text-base text-stone-900">
+            Classic French Croissant Hoops - Flat ?250 (50% Off)
+          </h4>
+          <span class="text-xs text-stone-500">18K Anti-Tarnish PVD Plated ? Free Delivery available across India</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <div class="text-xs text-stone-600 flex items-center gap-1.5 bg-stone-100 px-3 py-1.5 rounded">
+          <i data-lucide="clock" class="w-4 h-4 text-amzRed"></i>
+          <span>Ends in: <strong class="text-amzRed font-mono" id="deal-timer">05h 42m 18s</strong></span>
+        </div>
+
+        <a href="#catalogue-section" class="px-4 py-1.5 bg-amzYellow hover:bg-amzYellowHover text-stone-950 text-xs font-bold rounded shadow-sm transition whitespace-nowrap">
+          Claim Deal
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. AMAZON 2-COLUMN CATALOGUE & SEARCH RESULTS SECTION -->
+  <section id="catalogue-section" class="max-w-7xl mx-auto px-3 sm:px-6 mb-16">
+    
+    <!-- Results Header Bar -->
+    <div class="bg-white p-3 rounded-t border border-stone-200 border-b-0 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-sm">
+      <div class="flex items-center gap-2 text-xs sm:text-sm text-stone-700">
+        <span id="results-count-text" class="font-bold">Showing 1-12 of 12 results</span>
+        <span class="text-stone-400">|</span>
+        <span class="text-stone-500 font-medium">All items sold exclusively by <span class="brand-name-text font-bold text-stone-900">Aurelia Jewels</span></span>
+      </div>
+
+      <div class="flex items-center gap-2 text-xs">
+        <label for="sort-select" class="text-stone-600 font-medium whitespace-nowrap">Sort by:</label>
+        <select id="sort-select" class="bg-stone-50 border border-stone-300 rounded px-2.5 py-1.5 text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-amzOrange shadow-inner cursor-pointer">
+          <option value="featured">Featured</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="rating">Avg. Customer Review</option>
+          <option value="newest">Newest Arrivals</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-stone-200 rounded-b overflow-hidden bg-white shadow-sm">
+      
+      <!-- LEFT SIDEBAR: AMAZON FACETED FILTERS -->
+      <aside class="lg:col-span-3 p-4 border-r border-stone-200 bg-stone-50/50 space-y-6 text-xs">
+        
+        <!-- Filter Header & Reset -->
+        <div class="flex items-center justify-between pb-2 border-b border-stone-200">
+          <h4 class="font-bold text-sm text-[#0F1111]">Filter Results</h4>
+          <button type="button" id="clear-all-filters-btn" class="amz-link font-semibold text-[11px]">Clear all</button>
+        </div>
+
+        <!-- Express / Prime Filter -->
+        <div>
+          <label class="flex items-center gap-2 cursor-pointer font-bold text-stone-900">
+            <input type="checkbox" id="filter-express-delivery" class="rounded text-amzOrange focus:ring-amzOrange w-4 h-4 cursor-pointer" />
+            <span class="flex items-center gap-1 text-amzBlue">
+              <i data-lucide="check" class="w-3.5 h-3.5 text-amber-500"></i>
+              <span>Luxe Express</span>
+            </span>
+          </label>
+          <span class="text-[10px] text-stone-500 block ml-6">Next-Day Delivery available</span>
+        </div>
+
+        <!-- Categories Filter -->
+        <div>
+          <h5 class="font-bold text-xs uppercase tracking-wider text-stone-800 mb-2">Category</h5>
+          <div id="filter-category-list" class="space-y-1.5 text-stone-700">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- Customer Review Stars Filter -->
+        <div>
+          <h5 class="font-bold text-xs uppercase tracking-wider text-stone-800 mb-2">Customer Reviews</h5>
+          <div class="space-y-1.5 text-stone-700">
+            <button type="button" class="filter-rating-btn w-full flex items-center justify-between p-1 rounded hover:bg-stone-100 transition" data-min-rating="4">
+              <div class="flex items-center gap-1 text-amzOrange">
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-amzOrange text-amzOrange"></i>
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-amzOrange text-amzOrange"></i>
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-amzOrange text-amzOrange"></i>
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-amzOrange text-amzOrange"></i>
+                <i data-lucide="star" class="w-3.5 h-3.5 text-stone-300"></i>
+                <span class="text-stone-800 font-semibold ml-1">& Up</span>
+              </div>
+            </button>
+            <button type="button" class="filter-rating-btn w-full flex items-center justify-between p-1 rounded hover:bg-stone-100 transition" data-min-rating="3">
+              <div class="flex items-center gap-1 text-amzOrange">
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-amzOrange text-amzOrange"></i>
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-amzOrange text-amzOrange"></i>
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-amzOrange text-amzOrange"></i>
+                <i data-lucide="star" class="w-3.5 h-3.5 text-stone-300"></i>
+                <i data-lucide="star" class="w-3.5 h-3.5 text-stone-300"></i>
+                <span class="text-stone-800 font-semibold ml-1">& Up</span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Price Range Filter -->
+        <div>
+          <h5 class="font-bold text-xs uppercase tracking-wider text-stone-800 mb-2">Price</h5>
+          <div class="space-y-1.5 text-stone-700">
+            <button type="button" class="filter-price-btn block amz-link" data-min="0" data-max="300">Under ?300 (Hoops ?250)</button>
+            <button type="button" class="filter-price-btn block amz-link" data-min="300" data-max="500">?300 - ?500</button>
+            <button type="button" class="filter-price-btn block amz-link" data-min="500" data-max="1000">?500 - ?1,000</button>
+            <button type="button" class="filter-price-btn block amz-link" data-min="1000" data-max="99999">Over ?1,000</button>
+          </div>
+
+          <!-- Custom Price Inputs -->
+          <div class="flex items-center gap-1.5 mt-2.5">
+            <span class="text-stone-400">?</span>
+            <input type="number" id="custom-min-price" placeholder="Min" class="w-16 px-1.5 py-1 bg-white border border-stone-300 rounded text-[11px]" />
+            <span class="text-stone-400">to ?</span>
+            <input type="number" id="custom-max-price" placeholder="Max" class="w-16 px-1.5 py-1 bg-white border border-stone-300 rounded text-[11px]" />
+            <button type="button" id="apply-custom-price-btn" class="px-2 py-1 bg-stone-200 hover:bg-stone-300 rounded font-bold text-[10px]">Go</button>
+          </div>
+        </div>
+
+        <!-- Metal / Finish Filter -->
+        <div>
+          <h5 class="font-bold text-xs uppercase tracking-wider text-stone-800 mb-2">Metal & Plating</h5>
+          <div id="filter-metal-list" class="space-y-1 text-stone-700">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" value="18K Gold Plated" class="metal-checkbox rounded text-amzOrange w-3.5 h-3.5" />
+              <span>18K Gold Plated</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" value="316L Stainless Steel" class="metal-checkbox rounded text-amzOrange w-3.5 h-3.5" />
+              <span>316L Stainless Steel</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" value="Rose Gold" class="metal-checkbox rounded text-amzOrange w-3.5 h-3.5" />
+              <span>Rose Gold Tone</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" value="Silver Tone" class="metal-checkbox rounded text-amzOrange w-3.5 h-3.5" />
+              <span>Silver Tone</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Discount Percentage Filter -->
+        <div>
+          <h5 class="font-bold text-xs uppercase tracking-wider text-stone-800 mb-2">Discount</h5>
+          <div class="space-y-1 text-stone-700">
+            <button type="button" class="filter-discount-btn block amz-link" data-discount="10">10% Off or more</button>
+            <button type="button" class="filter-discount-btn block amz-link" data-discount="25">25% Off or more</button>
+            <button type="button" class="filter-discount-btn block amz-link" data-discount="50">50% Off or more</button>
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- RIGHT COLUMN: PRODUCT RESULTS GRID -->
+      <main class="lg:col-span-9 p-4 bg-white">
+        
+        <!-- Single-Seller Guarantee Banner -->
+        <div class="mb-4 p-3 bg-amber-50/80 border border-amber-200/90 rounded flex items-center justify-between gap-3 text-xs text-amber-900">
+          <div class="flex items-center gap-2">
+            <i data-lucide="award" class="w-4 h-4 text-amber-700 flex-shrink-0"></i>
+            <span><strong>Sole Brand Manufacturer:</strong> Every piece below is designed, quality-checked, and shipped directly by your store.</span>
+          </div>
+          <button type="button" class="open-seller-btn text-xs font-bold underline hover:text-amber-950 whitespace-nowrap">
+            + Add New Product
+          </button>
+        </div>
+
+        <!-- Product Cards Grid -->
+        <div id="amz-product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <!-- Dynamically populated by app.js -->
+        </div>
+
+      </main>
+
+    </div>
+  </section>
+
+  <!-- 6. AMAZON PRODUCT DETAIL PAGE (PDP) & BUY BOX MODAL -->
+  <div id="pdp-modal" class="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 modal-backdrop hidden overflow-y-auto">
+    <div class="bg-white rounded-lg max-w-5xl w-full max-h-[94vh] flex flex-col shadow-2xl border border-stone-300 overflow-hidden my-auto">
+      
+      <!-- Top Modal Bar -->
+      <div class="px-4 py-2.5 bg-stone-100 border-b border-stone-200 flex items-center justify-between">
+        <div class="flex items-center gap-2 text-xs">
+          <span class="text-stone-500">Back to results</span>
+          <span class="text-stone-300">|</span>
+          <span class="font-bold text-stone-800 brand-name-text">AURELIA JEWELS STORE</span>
+        </div>
+        <button type="button" id="close-pdp-modal-btn" class="p-1 text-stone-500 hover:text-stone-900 rounded">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Main PDP Content Grid -->
+      <div class="p-4 sm:p-6 overflow-y-auto grid grid-cols-1 md:grid-cols-12 gap-6 text-[#0F1111]">
+        
+        <!-- LEFT: IMAGE GALLERY (4 Cols) -->
+        <div class="md:col-span-5 flex flex-col-reverse sm:flex-row gap-3">
+          <!-- Thumbnail Strip -->
+          <div id="pdp-thumbnails" class="flex sm:flex-col gap-2 overflow-x-auto sm:overflow-y-auto flex-shrink-0">
+            <!-- Thumbnails injected via JS -->
+          </div>
+
+          <!-- Main Zoomable Image -->
+          <div class="flex-grow aspect-square bg-stone-50 rounded border border-stone-200 overflow-hidden flex items-center justify-center relative group">
+            <img id="pdp-main-image" src="" alt="Jewellery" class="pdp-main-img w-full h-full object-cover cursor-zoom-in" />
+            <span class="absolute bottom-2 right-2 bg-black/60 text-white text-[10px] px-2 py-0.5 rounded opacity-0 group-hover:opacity-100 transition">
+              Roll over image to zoom
+            </span>
+          </div>
+        </div>
+
+        <!-- CENTER: PRODUCT INFO & SPECS (4 Cols) -->
+        <div class="md:col-span-4 space-y-3">
+          <!-- Brand Link -->
+          <a href="#" class="amz-link text-xs font-semibold block">
+            Visit the <span class="brand-name-text">Aurelia Jewels</span> Store
+          </a>
+
+          <!-- Title -->
+          <h2 id="pdp-title" class="font-serif text-lg sm:text-xl font-bold leading-snug"></h2>
+
+          <!-- Ratings & Q&A -->
+          <div class="flex items-center gap-2 text-xs pb-2 border-b border-stone-200">
+            <div class="flex items-center text-amzOrange" id="pdp-stars"></div>
+            <span id="pdp-rating-num" class="font-bold"></span>
+            <span class="text-stone-400">|</span>
+            <a href="#pdp-reviews-section" class="amz-link" id="pdp-reviews-count-link"></a>
+          </div>
+
+          <!-- Price & Savings -->
+          <div class="space-y-1 pt-1">
+            <div class="flex items-baseline gap-2">
+              <span class="text-xs font-bold text-amzRed uppercase">Deal</span>
+              <span class="text-2xl font-bold" id="pdp-price"></span>
+              <span class="text-xs text-stone-500 line-through" id="pdp-mrp"></span>
+              <span class="text-xs text-amzRed font-bold" id="pdp-savings"></span>
+            </div>
+            <span class="text-[11px] text-stone-500 block">Inclusive of all taxes</span>
+          </div>
+
+          <!-- Finish / Variant Selector -->
+          <div id="pdp-variant-selector" class="pt-2"></div>
+
+          <!-- "About this item" Bullet Points -->
+          <div class="pt-3 border-t border-stone-200">
+            <h4 class="font-bold text-xs uppercase tracking-wider mb-2">About this item</h4>
+            <ul id="pdp-about-bullets" class="space-y-1.5 text-xs text-stone-700 list-disc pl-4 leading-relaxed"></ul>
+          </div>
+        </div>
+
+        <!-- RIGHT: AMAZON BUY BOX (3 Cols) -->
+        <div class="md:col-span-3">
+          <div class="amz-buybox p-4 space-y-3 shadow-sm">
+            
+            <!-- Price in Buy Box -->
+            <div class="text-xl font-bold text-[#0F1111]" id="buybox-price">?250</div>
+            
+            <!-- Delivery Line -->
+            <div class="text-xs space-y-1">
+              <div class="text-stone-700">
+                <span class="font-bold text-emerald-800">FREE delivery</span> by <strong id="buybox-delivery-date" class="text-stone-900 font-bold">Tomorrow</strong>.
+              </div>
+              <button type="button" class="amz-link text-[11px] block text-left" id="buybox-location-link">
+                Deliver to <span class="current-city-pincode">Mumbai 400001</span>
+              </button>
+            </div>
+
+            <!-- In Stock Status -->
+            <div class="text-sm font-bold text-amzGreen flex items-center gap-1">
+              <i data-lucide="check" class="w-4 h-4"></i> In Stock
+            </div>
+
+            <!-- Single-Seller Guarantee Details -->
+            <div class="text-[11px] space-y-1 pt-2 border-t border-stone-200 text-stone-600">
+              <div class="flex justify-between">
+                <span>Sold by</span>
+                <span class="font-bold text-stone-900 text-right truncate max-w-[130px] brand-name-text">Aurelia Jewels (Sole Maker)</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Ships from</span>
+                <span class="font-bold text-stone-900">Direct Workshop</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Payment</span>
+                <span class="text-stone-900">WhatsApp / UPI / COD</span>
+              </div>
+            </div>
+
+            <!-- Quantity Picker -->
+            <div class="pt-1">
+              <label class="block text-xs font-semibold mb-1">Quantity:</label>
+              <select id="pdp-quantity-select" class="w-full bg-stone-100 border border-stone-300 rounded px-2 py-1.5 text-xs font-bold focus:outline-none focus:ring-1 focus:ring-amzOrange shadow-inner cursor-pointer">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="space-y-2 pt-2">
+              <button type="button" id="pdp-add-to-cart-btn" class="btn-amz-cart w-full py-2 px-3 rounded-full text-xs font-bold flex items-center justify-center gap-1.5 transition active:scale-95">
+                <i data-lucide="shopping-cart" class="w-3.5 h-3.5"></i> Add to Cart
+              </button>
+              
+              <button type="button" id="pdp-buy-now-btn" class="btn-amz-buy w-full py-2 px-3 rounded-full text-xs font-bold flex items-center justify-center gap-1.5 transition active:scale-95">
+                <i data-lucide="zap" class="w-3.5 h-3.5"></i> Buy Now
+              </button>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="pt-2 text-[10px] text-stone-500 space-y-1">
+              <div class="flex items-center gap-1">
+                <i data-lucide="lock" class="w-3 h-3 text-stone-400"></i>
+                <span>Secure direct checkout</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <i data-lucide="shield" class="w-3 h-3 text-emerald-600"></i>
+                <span>1-Year Anti-Tarnish Assurance</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- FREQUENTLY BOUGHT TOGETHER BUNDLE -->
+        <div class="col-span-1 md:col-span-12 p-4 bg-stone-50 rounded border border-stone-200 mt-2">
+          <h4 class="font-bold text-sm text-stone-900 mb-3">Frequently bought together</h4>
+          <div class="flex flex-col sm:flex-row items-center gap-4">
+            <div class="flex items-center gap-3">
+              <img id="fbt-img-1" src="" class="w-16 h-16 object-cover rounded border border-stone-300" alt="Item 1" />
+              <span class="text-xl font-bold text-stone-400">+</span>
+              <img id="fbt-img-2" src="" class="w-16 h-16 object-cover rounded border border-stone-300" alt="Item 2" />
+            </div>
+
+            <div class="flex-grow text-xs">
+              <div class="font-bold text-stone-900" id="fbt-bundle-names"></div>
+              <div class="text-sm font-bold text-amzRed mt-1">
+                Bundle Price: <span id="fbt-bundle-price"></span>
+              </div>
+            </div>
+
+            <button type="button" id="fbt-add-both-btn" class="btn-amz-cart px-4 py-2 rounded text-xs font-bold whitespace-nowrap shadow-sm">
+              Add both to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- TECHNICAL DETAILS TABLE -->
+        <div class="col-span-1 md:col-span-12 pt-4 border-t border-stone-200">
+          <h4 class="font-bold text-sm text-stone-900 mb-2">Technical Details & Specifications</h4>
+          <table class="w-full text-left text-xs border border-stone-200">
+            <tbody id="pdp-specs-table-body"></tbody>
+          </table>
+        </div>
+
+        <!-- CUSTOMER REVIEWS BREAKDOWN -->
+        <div id="pdp-reviews-section" class="col-span-1 md:col-span-12 pt-4 border-t border-stone-200">
+          <h4 class="font-bold text-sm text-stone-900 mb-3">Customer Reviews & Ratings</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-12 gap-6">
+            <div class="sm:col-span-4 space-y-2">
+              <div class="flex items-baseline gap-2">
+                <span class="text-3xl font-bold text-stone-900" id="pdp-review-score">4.8</span>
+                <span class="text-xs text-stone-500">out of 5 stars</span>
+              </div>
+              <div class="space-y-1.5" id="pdp-review-bars"></div>
+            </div>
+            
+            <div class="sm:col-span-8 space-y-3">
+              <h5 class="font-bold text-xs uppercase tracking-wider text-stone-800">Verified Buyer Reviews</h5>
+              <div class="p-3 bg-stone-50 rounded border border-stone-200 text-xs space-y-1">
+                <div class="flex items-center gap-1.5 text-amzOrange">
+                  <i data-lucide="star" class="w-3.5 h-3.5 fill-amzOrange"></i>
+                  <i data-lucide="star" class="w-3.5 h-3.5 fill-amzOrange"></i>
+                  <i data-lucide="star" class="w-3.5 h-3.5 fill-amzOrange"></i>
+                  <i data-lucide="star" class="w-3.5 h-3.5 fill-amzOrange"></i>
+                  <i data-lucide="star" class="w-3.5 h-3.5 fill-amzOrange"></i>
+                  <span class="font-bold text-stone-900 ml-1">True anti-tarnish everyday hoops!</span>
+                </div>
+                <span class="text-[11px] text-stone-500 block">Reviewed in India ? <strong class="text-emerald-700">Verified Purchase</strong></span>
+                <p class="text-stone-700 leading-relaxed">
+                  "I was skeptical about ?250 anti-tarnish hoops, but I've worn these continuously for 3 weeks including daily showers. Zero darkening, no ear pain or itching! Incredible quality."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 7. AMAZON SHOPPING CART DRAWER -->
+  <div id="cart-drawer" class="fixed inset-y-0 right-0 z-50 w-full sm:max-w-lg bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col border-l border-stone-300">
+    <!-- Cart Header -->
+    <div class="p-4 bg-stone-100 border-b border-stone-200 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <i data-lucide="shopping-cart" class="w-5 h-5 text-stone-900"></i>
+        <h3 class="font-bold text-base text-stone-900">Shopping Cart</h3>
+      </div>
+      <button type="button" id="close-cart-btn" class="p-1 text-stone-500 hover:text-stone-900 rounded">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <!-- Free Delivery Threshold Bar -->
+    <div class="p-3 bg-amber-50 border-b border-amber-200">
+      <div id="cart-free-shipping-text" class="text-xs text-amber-950 font-bold mb-1">
+        Add items to qualify for FREE Delivery across India!
+      </div>
+      <div class="w-full bg-stone-200 h-2 rounded-full overflow-hidden">
+        <div id="cart-free-shipping-bar" class="w-0 h-2 bg-amzGreen transition-all duration-300"></div>
+      </div>
+    </div>
+
+    <!-- Cart Items Scroll Area -->
+    <div class="flex-grow overflow-y-auto p-4 space-y-4">
+      <!-- Empty State -->
+      <div id="cart-empty-state" class="py-16 text-center">
+        <i data-lucide="shopping-cart" class="w-12 h-12 mx-auto mb-2 text-stone-300"></i>
+        <h4 class="font-bold text-base text-stone-800">Your Aurelia Cart is empty</h4>
+        <p class="text-xs text-stone-500 mt-1">Check out our best-selling hoop earrings starting at ?250!</p>
+        <button type="button" onclick="window.aureliaApp.closeCart()" class="btn-amz-cart mt-4 px-4 py-2 rounded text-xs font-bold shadow-sm">
+          Continue Shopping
+        </button>
+      </div>
+
+      <!-- Active Items Container -->
+      <div id="cart-items-container" class="space-y-3"></div>
+
+      <!-- Saved for Later Container -->
+      <div id="cart-saved-container" class="pt-4 border-t border-stone-200 hidden">
+        <h4 class="font-bold text-xs uppercase tracking-wider text-stone-700 mb-2">Saved for later</h4>
+        <div id="cart-saved-items" class="space-y-3"></div>
+      </div>
+    </div>
+
+    <!-- Cart Footer / Summary -->
+    <div id="cart-footer-summary" class="p-4 bg-stone-50 border-t border-stone-200 space-y-3 hidden">
+      <!-- Promo Coupon -->
+      <div class="flex gap-2">
+        <input 
+          type="text" 
+          id="cart-coupon-input" 
+          placeholder="Promo code (LUXE10)" 
+          class="flex-grow px-3 py-1.5 text-xs bg-white border border-stone-300 rounded uppercase font-bold focus:outline-none focus:ring-1 focus:ring-amzOrange" 
+        />
+        <button type="button" id="cart-apply-coupon-btn" class="px-3 py-1.5 bg-stone-200 hover:bg-stone-300 text-stone-800 text-xs font-bold rounded">
+          Apply
+        </button>
+      </div>
+
+      <!-- Subtotal Lines -->
+      <div class="space-y-1 text-xs text-stone-600">
+        <div class="flex justify-between">
+          <span>Items Subtotal:</span>
+          <span id="cart-summary-subtotal" class="font-bold text-stone-900">?0</span>
+        </div>
+        <div id="cart-summary-mrp-savings-row" class="flex justify-between text-amzGreen font-bold">
+          <span>Total M.R.P. Savings:</span>
+          <span id="cart-summary-mrp-savings">-?0</span>
+        </div>
+        <div id="cart-summary-promo-row" class="flex justify-between text-amzGreen font-bold hidden">
+          <span>Coupon Discount (LUXE10):</span>
+          <span id="cart-summary-promo">-?0</span>
+        </div>
+        <div class="flex justify-between">
+          <span>Delivery:</span>
+          <span id="cart-summary-shipping" class="font-bold text-stone-900">FREE</span>
+        </div>
+        <div class="flex justify-between text-sm font-bold text-stone-950 pt-2 border-t border-stone-200">
+          <span>Order Total:</span>
+          <span id="cart-summary-final-total">?0</span>
+        </div>
+      </div>
+
+      <!-- Checkout Button -->
+      <button type="button" id="cart-proceed-checkout-btn" class="btn-amz-buy w-full py-2.5 rounded-full text-xs font-bold flex items-center justify-center gap-2 shadow transition active:scale-95">
+        <i data-lucide="lock" class="w-4 h-4"></i>
+        <span>Proceed to Buy</span>
+      </button>
+      <span class="text-[10px] text-center text-stone-500 block">Orders routed directly to Aurelia Jewels verified seller WhatsApp</span>
+    </div>
+  </div>
+
+  <div id="cart-backdrop" class="fixed inset-0 z-40 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+  <!-- 8. DELIVERY ADDRESS & CHECKOUT MODAL -->
+  <div id="checkout-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 modal-backdrop hidden overflow-y-auto">
+    <div class="bg-white rounded-lg max-w-lg w-full max-h-[92vh] flex flex-col shadow-2xl border border-stone-300 overflow-hidden my-auto">
+      <div class="p-4 bg-stone-100 border-b border-stone-200 flex items-center justify-between">
+        <div>
+          <h3 class="font-bold text-base text-stone-900">Select a Delivery Address</h3>
+          <span class="text-xs text-stone-500">Fast delivery across India via Aurelia Jewels</span>
+        </div>
+        <button type="button" id="close-checkout-btn" class="p-1 text-stone-400 hover:text-stone-900 rounded">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="checkout-form" class="p-5 overflow-y-auto space-y-3.5 text-xs">
+        <div class="p-2.5 bg-amber-50 rounded border border-amber-200 flex justify-between items-center">
+          <span class="font-bold text-amber-950">Total Payable:</span>
+          <span id="checkout-total-banner" class="text-base font-bold text-amber-950">?0</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-stone-700 mb-1">Full Name *</label>
+            <input type="text" name="customerName" required placeholder="e.g. Priya Sharma" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded focus:bg-white focus:ring-1 focus:ring-amzOrange" />
+          </div>
+          <div>
+            <label class="block font-bold text-stone-700 mb-1">Mobile Number (WhatsApp) *</label>
+            <input type="tel" name="customerPhone" required placeholder="10-digit mobile" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded focus:bg-white focus:ring-1 focus:ring-amzOrange" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-stone-700 mb-1">Flat, House no., Building, Company, Apartment *</label>
+          <input type="text" name="customerAddress" required placeholder="e.g. Flat 402, Palm Heights" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded focus:bg-white focus:ring-1 focus:ring-amzOrange" />
+        </div>
+
+        <div>
+          <label class="block font-bold text-stone-700 mb-1">Area, Street, Sector, Village *</label>
+          <input type="text" name="customerArea" required placeholder="e.g. Link Road, Andheri West" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded focus:bg-white focus:ring-1 focus:ring-amzOrange" />
+        </div>
+
+        <div class="grid grid-cols-3 gap-2">
+          <div>
+            <label class="block font-bold text-stone-700 mb-1">Pincode *</label>
+            <input type="text" name="customerPincode" required placeholder="6 digits" class="w-full px-2 py-2 bg-stone-50 border border-stone-300 rounded focus:bg-white focus:ring-1 focus:ring-amzOrange" />
+          </div>
+          <div>
+            <label class="block font-bold text-stone-700 mb-1">Town/City *</label>
+            <input type="text" name="customerCity" required placeholder="e.g. Mumbai" class="w-full px-2 py-2 bg-stone-50 border border-stone-300 rounded focus:bg-white focus:ring-1 focus:ring-amzOrange" />
+          </div>
+          <div>
+            <label class="block font-bold text-stone-700 mb-1">State *</label>
+            <select name="customerState" class="w-full px-1.5 py-2 bg-stone-50 border border-stone-300 rounded focus:bg-white focus:ring-1 focus:ring-amzOrange">
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="Telangana">Telangana</option>
+              <option value="West Bengal">West Bengal</option>
+              <option value="Other">Other State</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-stone-700 mb-1">Landmark (Optional)</label>
+          <input type="text" name="customerLandmark" placeholder="e.g. Near Metro Station" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded focus:bg-white focus:ring-1 focus:ring-amzOrange" />
+        </div>
+
+        <div>
+          <label class="block font-bold text-stone-700 mb-1">Select Payment Method</label>
+          <select name="paymentMethod" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded font-bold">
+            <option value="WhatsApp Order (UPI / GPay / PhonePe QR)">WhatsApp Order Enquiry (Instant UPI QR)</option>
+            <option value="Cash on Delivery (COD Enquiry)">Cash on Delivery (Subject to Pincode Verification)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-amz-buy w-full py-3 rounded-full text-xs font-bold uppercase tracking-wider shadow transition mt-2 active:scale-95">
+          Use This Address & Confirm on WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 9. PINCODE LOCATION SELECTOR MODAL -->
+  <div id="pincode-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden">
+    <div class="bg-white rounded-lg max-w-sm w-full p-5 shadow-2xl border border-stone-300 space-y-3">
+      <div class="flex items-center justify-between pb-2 border-b border-stone-200">
+        <h4 class="font-bold text-sm text-stone-900">Choose your delivery location</h4>
+        <button type="button" id="close-pincode-modal-btn" class="text-stone-400 hover:text-stone-900">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+      <p class="text-xs text-stone-600">
+        Enter your Indian 6-digit Pincode to view product availability and express delivery dates.
+      </p>
+      <form id="pincode-form" class="space-y-3">
+        <input 
+          type="text" 
+          id="pincode-input" 
+          maxlength="6" 
+          placeholder="Enter 6-digit Pincode (e.g. 400001)" 
+          required 
+          class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded text-xs font-bold tracking-wider text-center focus:bg-white focus:ring-1 focus:ring-amzOrange"
+        />
+        <button type="submit" class="btn-amz-cart w-full py-2 rounded text-xs font-bold shadow-sm">
+          Apply Pincode
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 10. AMAZON-STYLE SELLER CENTRAL (SOLE MERCHANT ONLY - PIN PROTECTED) -->
+  <div id="seller-modal" class="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 modal-backdrop hidden overflow-y-auto">
+    <div class="bg-white rounded-lg max-w-5xl w-full max-h-[94vh] flex flex-col shadow-2xl border border-stone-300 overflow-hidden my-auto">
+      
+      <!-- Top Seller Central Bar -->
+      <div class="p-3 bg-amzDark text-white flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <i data-lucide="shield-check" class="w-5 h-5 text-amber-400"></i>
+          <div>
+            <h3 class="font-bold text-sm text-white">Aurelia Jewels ? Seller Central</h3>
+            <span class="text-[10px] text-stone-400">Exclusive Sole-Merchant Portal (Items displayed only by you)</span>
+          </div>
+        </div>
+        <button type="button" id="close-seller-btn" class="p-1 text-stone-400 hover:text-white rounded">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- VIEW 1: SELLER PIN LOGIN -->
+      <div id="seller-login-view" class="p-8 text-center max-w-sm mx-auto my-auto">
+        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-stone-100 flex items-center justify-center text-stone-800">
+          <i data-lucide="lock" class="w-6 h-6 text-amzOrange"></i>
+        </div>
+        <h4 class="font-bold text-base text-stone-900">Seller Central Login</h4>
+        <p class="text-xs text-stone-500 mt-1 mb-4">Enter your Store Owner Security PIN (Default: <strong class="text-stone-900">1234</strong>)</p>
+        <form id="seller-login-form" class="space-y-3">
+          <input 
+            type="password" 
+            id="seller-pin-input" 
+            maxlength="6" 
+            placeholder="PIN (1234)" 
+            required 
+            class="w-full text-center tracking-widest text-lg font-bold py-2 bg-stone-50 border border-stone-300 rounded focus:bg-white focus:ring-1 focus:ring-amzOrange"
+          />
+          <button type="submit" class="btn-amz-cart w-full py-2.5 rounded text-xs font-bold uppercase tracking-wider shadow-sm">
+            Access My Store Dashboard
+          </button>
+        </form>
+      </div>
+
+      <!-- VIEW 2: SELLER DASHBOARD -->
+      <div id="seller-dashboard-view" class="flex-grow flex flex-col overflow-hidden hidden">
+        <!-- Navigation Tabs -->
+        <div class="flex border-b border-stone-200 bg-stone-100 px-3 overflow-x-auto text-xs whitespace-nowrap">
+          <button type="button" class="seller-tab-btn py-2.5 px-4 font-bold border-b-2 border-amzOrange text-stone-900 transition" data-tab="add-product">
+            + Add New Product
+          </button>
+          <button type="button" class="seller-tab-btn py-2.5 px-4 font-medium border-b-2 border-transparent text-stone-600 hover:text-stone-900 transition" data-tab="inventory">
+            Manage Products & Prices
+          </button>
+          <button type="button" class="seller-tab-btn py-2.5 px-4 font-medium border-b-2 border-transparent text-stone-600 hover:text-stone-900 transition" data-tab="orders">
+            Orders & Customer Enquiries
+          </button>
+          <button type="button" class="seller-tab-btn py-2.5 px-4 font-medium border-b-2 border-transparent text-stone-600 hover:text-stone-900 transition" data-tab="metrics">
+            Sales & Profit
+          </button>
+          <button type="button" class="seller-tab-btn py-2.5 px-4 font-medium border-b-2 border-transparent text-stone-600 hover:text-stone-900 transition" data-tab="settings">
+            Store & WhatsApp Settings
+          </button>
+          <button type="button" class="seller-tab-btn py-2.5 px-4 font-medium border-b-2 border-transparent text-stone-600 hover:text-stone-900 transition" data-tab="backup">
+            Backup / Export JSON
+          </button>
+          <button type="button" id="seller-logout-btn" class="ml-auto text-xs text-rose-600 font-bold px-3 py-2.5 hover:underline">
+            Logout
+          </button>
+        </div>
+
+        <div class="flex-grow overflow-y-auto p-4 sm:p-6 text-xs">
+          
+          <!-- TAB 1: ADD NEW PRODUCT FORM -->
+          <div id="seller-pane-add-product" class="seller-tab-pane space-y-4 max-w-2xl mx-auto">
+            <div class="border-b border-stone-200 pb-2">
+              <h4 class="font-bold text-base text-stone-900">List a New Jewellery Piece (Sole Seller)</h4>
+              <p class="text-xs text-stone-500">Only you can add and display products in this store.</p>
+            </div>
+
+            <form id="seller-add-product-form" class="space-y-3">
+              <div>
+                <label class="block font-bold text-stone-700 mb-1">Product Title *</label>
+                <input type="text" name="name" required placeholder="e.g. 18K Gold Plated Vintage Baguette Ring" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded focus:bg-white focus:ring-1 focus:ring-amzOrange" />
+              </div>
+
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <label class="block font-bold text-stone-700 mb-1">Category *</label>
+                  <select name="category" class="w-full px-2 py-2 bg-stone-50 border border-stone-300 rounded focus:bg-white focus:ring-1 focus:ring-amzOrange font-semibold">
+                    <option value="Hoop earrings">Hoop earrings</option>
+                    <option value="Stud earrings">Stud earrings</option>
+                    <option value="Jhumkas">Jhumkas</option>
+                    <option value="Necklaces">Necklaces</option>
+                    <option value="Rings">Rings</option>
+                    <option value="Bracelets">Bracelets</option>
+                    <option value="Jewellery sets">Jewellery sets</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block font-bold text-stone-700 mb-1">Metal / Finish *</label>
+                  <select name="metalType" class="w-full px-2 py-2 bg-stone-50 border border-stone-300 rounded focus:bg-white focus:ring-1 focus:ring-amzOrange">
+                    <option value="18K Gold Plated">18K Gold Plated</option>
+                    <option value="316L Stainless Steel">316L Stainless Steel</option>
+                    <option value="Rose Gold">Rose Gold</option>
+                    <option value="Silver Tone">Silver Tone</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-3 gap-3">
+                <div>
+                  <label class="block font-bold text-stone-700 mb-1">Selling Price (?) *</label>
+                  <input type="number" name="price" required placeholder="250" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded font-bold text-amzGreen focus:bg-white focus:ring-1 focus:ring-amzOrange" />
+                </div>
+                <div>
+                  <label class="block font-bold text-stone-700 mb-1">M.R.P. (?) *</label>
+                  <input type="number" name="originalPrice" required placeholder="499" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded focus:bg-white focus:ring-1 focus:ring-amzOrange" />
+                </div>
+                <div>
+                  <label class="block font-bold text-stone-700 mb-1">Initial Stock Qty</label>
+                  <input type="number" name="stockCount" value="25" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded focus:bg-white focus:ring-1 focus:ring-amzOrange" />
+                </div>
+              </div>
+
+              <!-- Private Dropshipping Costs -->
+              <div class="p-3 bg-amber-50 rounded border border-amber-200">
+                <span class="font-bold text-amber-900 block mb-1">?? Private Wholesale Costs (Never shown to customers):</span>
+                <div class="grid grid-cols-2 gap-3">
+                  <div>
+                    <label class="block text-[11px] text-amber-950">Wholesale Supplier Cost (?):</label>
+                    <input type="number" name="supplierCost" placeholder="95" class="w-full px-2 py-1.5 bg-white border border-amber-300 rounded" />
+                  </div>
+                  <div>
+                    <label class="block text-[11px] text-amber-950">Estimated Shipping Cost (?):</label>
+                    <input type="number" name="shippingCost" value="45" class="w-full px-2 py-1.5 bg-white border border-amber-300 rounded" />
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-bold text-stone-700 mb-1">Main Image URL *</label>
+                <input type="url" name="image1" required placeholder="https://images.unsplash.com/..." class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded focus:bg-white focus:ring-1 focus:ring-amzOrange" />
+              </div>
+
+              <div>
+                <label class="block font-bold text-stone-700 mb-1">Short Description *</label>
+                <textarea name="description" rows="2" placeholder="Brief introduction to the product..." class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded focus:bg-white focus:ring-1 focus:ring-amzOrange"></textarea>
+              </div>
+
+              <div class="flex items-center gap-4 pt-1">
+                <label class="flex items-center gap-1.5 font-bold cursor-pointer">
+                  <input type="checkbox" name="isBestseller" class="rounded text-amzOrange" />
+                  <span>Mark as Bestseller</span>
+                </label>
+                <label class="flex items-center gap-1.5 font-bold cursor-pointer">
+                  <input type="checkbox" name="isDealOfDay" class="rounded text-amzOrange" />
+                  <span>Add to Deal of the Day</span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn-amz-buy w-full py-3 rounded text-xs font-bold uppercase tracking-wider shadow transition">
+                Publish Product to My Store
+              </button>
+            </form>
+          </div>
+
+          <!-- TAB 2: INVENTORY & PRICE EDITOR -->
+          <div id="seller-pane-inventory" class="seller-tab-pane space-y-4 hidden">
+            <div class="flex items-center justify-between">
+              <div>
+                <h4 class="font-bold text-base text-stone-900">Manage Your Store Inventory</h4>
+                <p class="text-xs text-stone-500">Edit selling prices or supplier costs. Real-time profit calculates automatically.</p>
+              </div>
+            </div>
+
+            <div class="overflow-x-auto border border-stone-200 rounded">
+              <table class="w-full text-left border-collapse">
+                <thead class="bg-stone-100 text-[10px] font-bold text-stone-600 uppercase tracking-wider border-b border-stone-200">
+                  <tr>
+                    <th class="p-2.5">Product</th>
+                    <th class="p-2.5">Price (?)</th>
+                    <th class="p-2.5">M.R.P. (?)</th>
+                    <th class="p-2.5">Supplier Cost (?)</th>
+                    <th class="p-2.5">Unit Profit (?)</th>
+                    <th class="p-2.5">In Stock</th>
+                    <th class="p-2.5 text-right">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="seller-inventory-table-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- TAB 3: ORDERS & INQUIRIES -->
+          <div id="seller-pane-orders" class="seller-tab-pane space-y-4 hidden">
+            <h4 class="font-bold text-base text-stone-900">Customer Orders & Inquiries</h4>
+            <div class="overflow-x-auto border border-stone-200 rounded">
+              <table class="w-full text-left border-collapse">
+                <thead class="bg-stone-100 text-[10px] font-bold text-stone-600 uppercase tracking-wider border-b border-stone-200">
+                  <tr>
+                    <th class="p-2.5">Order ID</th>
+                    <th class="p-2.5">Customer & Phone</th>
+                    <th class="p-2.5">Delivery Address</th>
+                    <th class="p-2.5">Items</th>
+                    <th class="p-2.5">Total (?)</th>
+                    <th class="p-2.5">Net Profit (?)</th>
+                    <th class="p-2.5">Status</th>
+                  </tr>
+                </thead>
+                <tbody id="seller-orders-table-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- TAB 4: METRICS & PROFIT -->
+          <div id="seller-pane-metrics" class="seller-tab-pane space-y-4 hidden">
+            <h4 class="font-bold text-base text-stone-900">Sales & Profit Overview</h4>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div class="p-4 bg-stone-50 rounded border border-stone-200">
+                <span class="text-[10px] font-bold uppercase text-stone-500">Gross Sales</span>
+                <div class="text-2xl font-bold text-stone-900 mt-1" id="metric-gross-sales">?0</div>
+              </div>
+              <div class="p-4 bg-stone-50 rounded border border-stone-200">
+                <span class="text-[10px] font-bold uppercase text-stone-500">Total Expenses</span>
+                <div class="text-2xl font-bold text-stone-600 mt-1" id="metric-total-costs">?0</div>
+              </div>
+              <div class="p-4 bg-emerald-50 rounded border border-emerald-200">
+                <span class="text-[10px] font-bold uppercase text-emerald-800">Estimated Net Profit</span>
+                <div class="text-2xl font-bold text-emerald-700 mt-1" id="metric-net-profit">?0</div>
+              </div>
+              <div class="p-4 bg-stone-50 rounded border border-stone-200">
+                <span class="text-[10px] font-bold uppercase text-stone-500">Total Units Sold</span>
+                <div class="text-2xl font-bold text-amzOrange mt-1" id="metric-units-sold">0</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 5: STORE SETTINGS -->
+          <div id="seller-pane-settings" class="seller-tab-pane space-y-4 max-w-md hidden">
+            <h4 class="font-bold text-base text-stone-900">Store & WhatsApp Settings</h4>
+            <form id="seller-settings-form" class="space-y-3">
+              <div>
+                <label class="block font-bold text-stone-700 mb-1">Brand Name</label>
+                <input type="text" id="setting-brand-name" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded" />
+              </div>
+              <div>
+                <label class="block font-bold text-stone-700 mb-1">Seller Display Name</label>
+                <input type="text" id="setting-seller-name" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded" />
+              </div>
+              <div>
+                <label class="block font-bold text-stone-700 mb-1">Business WhatsApp Number (without + or spaces)</label>
+                <input type="text" id="setting-wa-number" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded" />
+              </div>
+              <div>
+                <label class="block font-bold text-stone-700 mb-1">Free Delivery Order Threshold (?)</label>
+                <input type="number" id="setting-free-ship-threshold" class="w-full px-3 py-2 bg-stone-50 border border-stone-300 rounded" />
+              </div>
+              <button type="submit" class="btn-amz-cart px-4 py-2 rounded text-xs font-bold shadow-sm">
+                Save Store Settings
+              </button>
+            </form>
+          </div>
+
+          <!-- TAB 6: BACKUP & JSON -->
+          <div id="seller-pane-backup" class="seller-tab-pane space-y-4 hidden">
+            <h4 class="font-bold text-base text-stone-900">Catalogue Data Backup</h4>
+            <p class="text-xs text-stone-500">Download your product database as a JSON file or restore from a backup.</p>
+            <div class="flex flex-wrap gap-3">
+              <button type="button" id="seller-export-btn" class="btn-amz-buy px-4 py-2 rounded text-xs font-bold shadow-sm flex items-center gap-2">
+                <i data-lucide="download" class="w-4 h-4"></i> Download Inventory JSON
+              </button>
+              <label class="btn-amz-cart px-4 py-2 rounded text-xs font-bold shadow-sm flex items-center gap-2 cursor-pointer">
+                <i data-lucide="upload" class="w-4 h-4"></i> Upload Inventory JSON
+                <input type="file" id="seller-import-input" accept=".json" class="hidden" />
+              </label>
+              <button type="button" id="seller-reset-btn" class="px-4 py-2 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-300 rounded text-xs font-bold">
+                Reset to Sample Catalogue
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 11. SLIDE-OUT MEGA DRAWER ("All Categories") -->
+  <div id="mega-menu-drawer" class="fixed inset-y-0 left-0 z-50 w-72 bg-white shadow-2xl transform -translate-x-full transition-transform duration-300 flex flex-col">
+    <div class="p-3.5 bg-amzDark text-white flex items-center justify-between">
+      <div class="flex items-center gap-2 font-bold text-sm">
+        <i data-lucide="user" class="w-5 h-5"></i>
+        <span>Hello, Guest Shopper</span>
+      </div>
+      <button type="button" id="close-mega-menu-btn" class="p-1 text-stone-400 hover:text-white">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+    <div class="p-4 flex-grow overflow-y-auto space-y-4 text-xs">
+      <div>
+        <h5 class="font-bold text-xs uppercase tracking-wider text-stone-500 mb-2">Shop By Category</h5>
+        <div class="space-y-2 text-stone-800">
+          <button type="button" class="drawer-cat-btn block w-full text-left py-1 hover:text-amzOrange font-medium" data-cat="Hoop earrings">Hoop Earrings (From ?250)</button>
+          <button type="button" class="drawer-cat-btn block w-full text-left py-1 hover:text-amzOrange font-medium" data-cat="Stud earrings">Stud Earrings</button>
+          <button type="button" class="drawer-cat-btn block w-full text-left py-1 hover:text-amzOrange font-medium" data-cat="Jhumkas">Traditional Jhumkas</button>
+          <button type="button" class="drawer-cat-btn block w-full text-left py-1 hover:text-amzOrange font-medium" data-cat="Necklaces">Chains & Pendants</button>
+          <button type="button" class="drawer-cat-btn block w-full text-left py-1 hover:text-amzOrange font-medium" data-cat="Rings">Statement Rings</button>
+          <button type="button" class="drawer-cat-btn block w-full text-left py-1 hover:text-amzOrange font-medium" data-cat="Bracelets">Bangles & Cuffs</button>
+          <button type="button" class="drawer-cat-btn block w-full text-left py-1 hover:text-amzOrange font-medium" data-cat="Jewellery sets">Jewellery Gift Sets</button>
+        </div>
+      </div>
+      <div class="pt-4 border-t border-stone-200">
+        <h5 class="font-bold text-xs uppercase tracking-wider text-stone-500 mb-2">Program Features</h5>
+        <div class="space-y-2 text-stone-800">
+          <span class="block text-emerald-800 font-bold">? 1-Year Anti-Tarnish Assurance</span>
+          <span class="block text-blue-800 font-bold">? 100% Shower & Water Safe</span>
+          <span class="block text-stone-700">? Free Delivery Over ?499</span>
+          <button type="button" class="open-seller-btn text-left text-amber-800 font-bold block pt-2">
+            ?? Owner Seller Central
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="mega-menu-backdrop" class="fixed inset-0 z-40 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+  <!-- 12. AMAZON-STYLE FOOTER -->
+  <footer class="bg-amzDark text-stone-300 text-xs">
+    <!-- Back to Top Button -->
+    <button type="button" onclick="window.scrollTo({top:0, behavior:'smooth'})" class="w-full py-3 bg-amzSubnav hover:bg-stone-700 text-white font-bold text-center transition">
+      Back to top
+    </button>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-8 border-b border-stone-700">
+      <div>
+        <h5 class="text-white font-bold text-sm mb-3">Get to Know Us</h5>
+        <ul class="space-y-1.5 text-stone-400">
+          <li><a href="#" class="hover:underline">About Aurelia Jewels</a></li>
+          <li><a href="#" class="hover:underline">18K PVD Anti-Tarnish Tech</a></li>
+          <li><a href="#" class="hover:underline">Jewellery Care Guide</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="text-white font-bold text-sm mb-3">Connect with Us</h5>
+        <ul class="space-y-1.5 text-stone-400">
+          <li><a href="https://wa.me/919876543210" target="_blank" class="hover:underline">WhatsApp Official Care</a></li>
+          <li><a href="#" class="hover:underline">Instagram Store</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="text-white font-bold text-sm mb-3">Exclusive Store Model</h5>
+        <ul class="space-y-1.5 text-stone-400">
+          <li><span>Single-Seller Platform</span></li>
+          <li><span>Sold & Shipped Direct from Maker</span></li>
+          <li><button type="button" class="open-seller-btn text-amber-400 hover:underline">Seller Central (PIN: 1234)</button></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="text-white font-bold text-sm mb-3">Let Us Help You</h5>
+        <ul class="space-y-1.5 text-stone-400">
+          <li><a href="#" class="hover:underline">All-India Shipping Policy</a></li>
+          <li><a href="#" class="hover:underline">48-Hr Replacement Policy</a></li>
+          <li><a href="#" class="hover:underline">FAQ & Order Help</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="py-6 text-center text-stone-500 text-[11px] space-y-1">
+      <div class="font-serif text-lg font-bold text-white brand-name-text">AURELIA JEWELS</div>
+      <p>? 2026 Aurelia Jewels. All products displayed and sold exclusively by the brand owner.</p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="amz-toast" class="fixed bottom-6 right-6 z-50 bg-stone-900 text-white px-4 py-3 rounded shadow-2xl text-xs font-semibold flex items-center gap-2 transform translate-y-12 opacity-0 transition-all duration-300 pointer-events-none border border-stone-700">
+    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+    <span id="toast-message">Added to Cart</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/whatsapp.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
